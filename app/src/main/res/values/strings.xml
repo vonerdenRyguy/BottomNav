@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">BottomNav</string>
+    <string name="remember_the_past">RTP</string>
+    <string name="home">Home</string>
+    <string name="calendar">Calendar</string>
+    <string name="add">Adds_event_to_calendar</string>
+
+</resources>
