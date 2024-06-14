@@ -6,5 +6,8 @@
     <string name="add">Adds_event_to_calendar</string>
     <string name="title">Title:</string>
     <string name="save">Save</string>
+    <string name="new_event_title">New Event</string>
+    <string name="image">Image:</string>
+    <string name="type">Type:</string>
 
 </resources>

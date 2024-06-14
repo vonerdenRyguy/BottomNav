@@ -24,7 +24,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="220dp" />
+        app:layout_constraintGuide_begin="350dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_middle"
@@ -38,7 +38,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="8dp" />
+        app:layout_constraintGuide_begin="100dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_right"
@@ -48,24 +48,23 @@
         app:layout_constraintGuide_end="16dp" />
 
     <TextView
-        android:id="@+id/header_title"
+        android:id="@+id/new_event"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="@string/juice_type"
-        android:textAppearance="@style/TextAppearance.Material3.HeadlineSmall"
+        android:text="@string/new_event_title"
+        android:textAppearance="@style/TextAppearance.Material3.HeadlineMedium"
         app:layout_constraintTop_toBottomOf="@+id/guideline_top"
-        app:layout_constraintEnd_toStartOf="@+id/guideline_middle"
-        app:layout_constraintStart_toStartOf="@+id/guideline_left" />
+        app:layout_constraintStart_toStartOf="@+id/guideline_left_indent" />
 
     <com.google.android.material.divider.MaterialDivider
         android:id="@+id/divider"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/header_title" />
+        android:layout_marginTop="15dp"
+        app:layout_constraintTop_toBottomOf="@+id/new_event" />
 
     <EditText
-        android:id="@+id/name"
+        android:id="@+id/title"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -79,14 +78,14 @@
     <TextView
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:labelFor="@id/name"
-        android:text="@string/juice_name"
-        app:layout_constraintBaseline_toBaselineOf="@+id/name"
+        android:labelFor="@id/title"
+        android:text="@string/title"
+        app:layout_constraintBaseline_toBaselineOf="@+id/title"
         app:layout_constraintEnd_toStartOf="@+id/guideline_left_indent"
         app:layout_constraintStart_toStartOf="@+id/guideline_left" />
 
     <EditText
-        android:id="@+id/description"
+        android:id="@+id/type"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -95,53 +94,36 @@
         android:inputType="text"
         app:layout_constraintEnd_toStartOf="@+id/guideline_right"
         app:layout_constraintStart_toStartOf="@+id/guideline_left_indent"
-        app:layout_constraintTop_toBottomOf="@+id/name"
+        app:layout_constraintTop_toBottomOf="@+id/title"
         android:importantForAutofill="no" />
 
     <TextView
-        android:id="@+id/desciption"
+        android:id="@+id/type_view"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:labelFor="@id/description"
-        android:text="@string/juice_description"
-        app:layout_constraintBaseline_toBaselineOf="@+id/description"
+        android:labelFor="@id/type"
+        android:text="@string/type"
+        app:layout_constraintBaseline_toBaselineOf="@+id/type"
         app:layout_constraintEnd_toStartOf="@+id/guideline_left_indent"
         app:layout_constraintStart_toStartOf="@+id/guideline_left" />
 
     <TextView
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:labelFor="@id/color_spinner"
-        android:text="@string/juice_color"
-        app:layout_constraintBaseline_toBaselineOf="@+id/color_spinner"
+        android:labelFor="@id/image_spinner"
+        android:text="@string/image"
+        app:layout_constraintBaseline_toBaselineOf="@+id/image_spinner"
         app:layout_constraintEnd_toStartOf="@+id/guideline_left_indent"
         app:layout_constraintStart_toStartOf="@+id/guideline_left" />
 
     <Spinner
-        android:id="@+id/color_spinner"
+        android:id="@+id/image_spinner"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         app:layout_constraintEnd_toStartOf="@+id/guideline_right"
         app:layout_constraintStart_toStartOf="@+id/guideline_left_indent"
-        app:layout_constraintTop_toBottomOf="@+id/description" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/juice_rating"
-        android:labelFor="@id/rating_bar"
-        app:layout_constraintStart_toStartOf="@+id/guideline_left"
-        app:layout_constraintTop_toTopOf="@+id/guideline_end_of_first_block" />
-
-    <RatingBar
-        android:id="@+id/rating_bar"
-        android:rating="3"
-        android:stepSize="1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="@+id/guideline_left_indent"
-        app:layout_constraintTop_toTopOf="@+id/guideline_end_of_first_block" />
+        app:layout_constraintTop_toBottomOf="@+id/type" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/saveButton"
@@ -150,9 +132,10 @@
         android:text="@string/save"
         android:enabled="false"
         style="@style/Widget.Material3.Button"
+        android:layout_marginTop="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline_middle"
-        app:layout_constraintTop_toBottomOf="@+id/rating_bar" />
+        app:layout_constraintTop_toBottomOf="@+id/image_spinner" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/cancelButton"
