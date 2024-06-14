@@ -4,5 +4,8 @@
     <string name="home">Home</string>
     <string name="calendar">Calendar</string>
     <string name="add">Adds_event_to_calendar</string>
+    <string name="title">Title:</string>
+    <string name="type">Type:</string>
+    <string name="image_text">Image:</string>
 
 </resources>
