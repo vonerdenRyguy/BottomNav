@@ -7,7 +7,10 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
+import com.example.bottomnav.R
 import com.example.bottomnav.databinding.FragmentNotificationsBinding
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class NotificationsFragment : Fragment() {
 
@@ -27,12 +30,16 @@ class NotificationsFragment : Fragment() {
 
         _binding = FragmentNotificationsBinding.inflate(inflater, container, false)
         val root: View = binding.root
-
-//            val textView: TextView = binding.textNotifications
-//            notificationsViewModel.text.observe(viewLifecycleOwner) {
-//                textView.text = it
-//            }
         return root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val fab: FloatingActionButton = view.findViewById(R.id.plusButton)
+        fab.setOnClickListener {
+            findNavController().navigate(R.id.action_navigation_calendar_to_add_to_calendar)
+        }
+
     }
 
     override fun onDestroyView() {

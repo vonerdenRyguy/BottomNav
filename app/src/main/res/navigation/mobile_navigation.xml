@@ -22,6 +22,15 @@
         android:id="@+id/navigation_calendar"
         android:name="com.example.bottomnav.ui.notifications.NotificationsFragment"
         android:label="@string/calendar"
-        tools:layout="@layout/fragment_notifications" />
+        tools:layout="@layout/fragment_notifications" >
+        <action
+            android:id="@+id/action_navigation_calendar_to_add_to_calendar"
+            app:destination="@id/add_to_calendar" />
+    </fragment>
+    <fragment
+        android:id="@+id/add_to_calendar"
+        android:name="com.example.bottomnav.add_to_calendar"
+        android:label="Event"
+        tools:layout="@layout/fragment_add_to_calendar" />
 
 </navigation>
