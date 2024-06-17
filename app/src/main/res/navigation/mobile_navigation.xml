@@ -31,6 +31,10 @@
         android:id="@+id/add_to_calendar"
         android:name="com.example.bottomnav.add_to_calendar"
         android:label="Event"
-        tools:layout="@layout/fragment_add_to_calendar" />
+        tools:layout="@layout/fragment_add_to_calendar" >
+        <action
+            android:id="@+id/action_add_to_calendar_to_navigation_calendar"
+            app:destination="@id/navigation_calendar" />
+    </fragment>
 
 </navigation>

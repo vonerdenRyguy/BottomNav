@@ -35,7 +35,7 @@ class NotificationsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val fab: FloatingActionButton = view.findViewById(R.id.plusButton)
+        val fab = binding.plusButton
         fab.setOnClickListener {
             findNavController().navigate(R.id.action_navigation_calendar_to_add_to_calendar)
         }
