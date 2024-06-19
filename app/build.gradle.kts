@@ -40,6 +40,7 @@ android {
 
 dependencies {
 
+
     implementation("androidx.recyclerview:recyclerview:1.2.1") // Or latest version
     implementation("androidx.viewpager2:viewpager2:1.0.0")
     implementation(libs.androidx.core.ktx)
@@ -52,7 +53,10 @@ dependencies {
     implementation(libs.androidx.navigation.ui.ktx)
     implementation(libs.androidx.ui.android)
     implementation(libs.androidx.material3.android)
+    implementation(libs.androidx.room.common)
+    implementation(libs.androidx.room.runtime)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    annotationProcessor(libs.androidx.room.compiler)
 }

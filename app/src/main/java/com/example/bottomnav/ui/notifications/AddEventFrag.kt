@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import android.widget.Button
+import android.widget.EditText
 import androidx.core.widget.doOnTextChanged
 import androidx.lifecycle.ViewModelProvider
 import com.example.bottomnav.databinding.FragmentAddToCalendarBinding
@@ -27,18 +28,30 @@ class AddEventFrag : Fragment() {
         return binding.root
     }
 
+    private lateinit var titleEditText: EditText
+    private lateinit var typeEditText: EditText
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        titleEditText = binding.title
+        typeEditText = binding.type
 
         binding.cancelButton.setOnClickListener {
 
         }
 
         binding.saveButton.setOnClickListener {
-
-
+            if (validateInput()) {
+                binding.saveButton.isEnabled = true
+            }
 
             findNavController().popBackStack()
         }
+    }
+
+    private fun validateInput(): Boolean {
+        val title = titleEditText.text.toString()
+        val type = typeEditText.text.toString()
+        return title.isNotEmpty() && type.isNotEmpty()
     }
 }

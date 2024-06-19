@@ -27,6 +27,7 @@
             android:id="@+id/action_navigation_calendar_to_add_to_calendar"
             app:destination="@id/add_to_calendar" />
     </fragment>
+<!--    change this frag to a dialog and other things should change too-->
     <fragment
         android:id="@+id/add_to_calendar"
         android:name="com.example.bottomnav.add_to_calendar"
