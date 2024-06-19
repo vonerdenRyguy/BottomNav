@@ -11,6 +11,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.bottomnav.databinding.FragmentAddToCalendarBinding
 import com.example.bottomnav.databinding.FragmentDashboardBinding
 import androidx.navigation.fragment.findNavController
+import com.example.bottomnav.R
 import com.example.bottomnav.ui.dashboard.DashboardViewModel
 
 class AddEventFrag : Fragment() {
@@ -30,21 +31,13 @@ class AddEventFrag : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.cancelButton.setOnClickListener {
-            findNavController().popBackStack()
+
         }
 
         binding.saveButton.setOnClickListener {
-            // Collect event data from UI elements
-            // ... collect other event details ...
 
-            binding.title.doOnTextChanged { _, start, _, count ->
-                binding.saveButton.isEnabled = (start + count) > 3
-            }
 
-            // Create the event (using Calendar Provider or other methods)
-            // ...
 
-            // Navigate back (optional)
             findNavController().popBackStack()
         }
     }
